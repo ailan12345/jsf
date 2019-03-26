@@ -9,8 +9,12 @@
     <h:body>
        <h:form>
             <h:outputText value="車車"/>
-            <h:selectManyListbox value="#{carRepositoryBean.repository.name}">
-                <f:selectItems value="#{carRepositoryBean.lastIndex}" />
+            <h:selectManyListbox value="#{carSelectionBean.cars}">
+                <f:selectItems value="#{carSelectionBean.cars}" 
+                             var="car"
+                             itemLabel="#{car.name.concat(car.manufacturer)}"
+                             itemValue="#={car.id}"
+                             /><!-- .concat() 來串接 -->
             </h:selectManyListbox>
            
             <h:commandButton value="Submit" action="#{mealOrderBean.handleOrder()}" />

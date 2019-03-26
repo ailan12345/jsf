@@ -10,6 +10,8 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import repository.CarRepositoryBean;
+import java.util.List;
+import repository.Car;
 
 /**
  *
@@ -22,7 +24,7 @@ public class CarSelectionBean implements Serializable{
     
     // Inject the car repository
     // DO NOT REMOVE THE CODE
-    @EJB CarRepositoryBean repository;
+    @EJB CarRepositoryBean repository;//@EJB -> 注入CarRepository可以來參考，即可呼叫CarRepository的內容
    
     /**
      * Action method to redirect to displayInfo facelets page.
@@ -31,6 +33,10 @@ public class CarSelectionBean implements Serializable{
     public String dispalyInfo(){
         
         return "displayInfo?faces-redirect=true";
+    }
+    
+    public List<Car >getCars(){
+        return repository.findAll();
     }
     
     
