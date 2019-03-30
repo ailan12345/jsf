@@ -30,13 +30,27 @@ public class CarSelectionBean implements Serializable{
      * Action method to redirect to displayInfo facelets page.
      * @return target page name
      */
-    public String dispalyInfo(){
+    public String dispalyInfo(){ 
         
         return "displayInfo?faces-redirect=true";
     }
     
     public List<Car >getCars(){
         return repository.findAll();
+    }
+    
+    String carId;
+    
+    public String getCarId(){
+        return carId;
+    }
+    
+    public void setCarId (String carId) {
+        this.carId = carId;
+    }
+
+    public Car getCar () {
+       return repository.query(Integer.valueOf(carId));
     }
     
     

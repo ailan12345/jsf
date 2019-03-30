@@ -7,17 +7,18 @@
         <title>Unit 04 Assignment</title>
     </h:head>
     <h:body>
+       <h:outputStylesheet library="css" name="main.css"/>
        <h:form>
             <h:outputText value="車車"/>
-            <h:selectManyListbox value="#{carSelectionBean.cars}">
+            <h:selectOneMenu value="#{carSelectionBean.carId}">
                 <f:selectItems value="#{carSelectionBean.cars}" 
                              var="car"
-                             itemLabel="#{car.name.concat(car.manufacturer)}"
-                             itemValue="#={car.id}"
-                             /><!-- .concat() 來串接 -->
-            </h:selectManyListbox>
+                             itemLabel="#{car.name.concat(' ').concat(car.manufacturer)}"
+                             itemValue="#{car.id}"
+                             />
+            </h:selectOneMenu>
            
-            <h:commandButton value="Submit" action="#{mealOrderBean.handleOrder()}" />
+            <h:commandButton value="Submit" type="submit" action="#{carSelectionBean.dispalyInfo()}" />
         </h:form>
     </h:body>
 </html>

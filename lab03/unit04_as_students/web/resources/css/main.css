@@ -1,0 +1,9 @@
+img {
+  transform-origin: 0 0;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(-15deg);}
+  100% {transform: rotate(0deg);}
+}
