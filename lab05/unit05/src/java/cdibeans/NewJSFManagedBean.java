@@ -15,11 +15,19 @@ import javax.enterprise.context.RequestScoped;
 @Named(value = "newJSFManagedBean")
 @RequestScoped
 public class NewJSFManagedBean {
-
+    private String itemID;
     /**
      * Creates a new instance of NewJSFManagedBean
      */
     public NewJSFManagedBean() {
+    }
+    
+    public String getItemID() {
+        return itemID;
+    }
+
+    public void setItemID() {
+        this.itemID = itemID;
     }
     
     public String toPage1() {
