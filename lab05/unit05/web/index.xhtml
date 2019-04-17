@@ -5,27 +5,28 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h:link value="Page1" outcome="index">
-            Item 1
-            <f:param name="itemID" value="1" />    
-        </h:link>
-            <h:link value="Page2" outcome="index">
-            Item 2
-            <f:param name="itemID" value="2" />    
-        </h:link>
-            <h:link value="Page3" outcome="index">
-            Item 3
-            <f:param name="itemID" value="3" />    
-        </h:link>
-        <h:outputText value="#{newJSFManagedBean.itemID}"/>
-         <f:metadata> 
+        <f:metadata> 
             <f:viewParam name="itemID" value="#{newJSFManagedBean.itemID}" />
         </f:metadata>
+    </h:head>
+    <h:body>
         <h:form>
-            <h:commandButton>Show Info</h:commandButton>
+            <h:link value="Page1" outcome="index">
+                <f:param name="itemID" value="1" />    
+            </h:link>
+
+            <h:link value="Page2" outcome="index">
+                <f:param name="itemID" value="2" />    
+            </h:link>
+
+            <h:link value="Page3" outcome="index">
+                <f:param name="itemID" value="3" />    
+            </h:link><br />
+           
+            <h:commandButton action="#{newJSFManagedBean.page()}" value="Show Info" />
         </h:form>
+        #{newJSFManagedBean.itemID}<br />
+        <h:graphicImage library="img" name="#{newJSFManagedBean.itemID}.jpg"/>
     </h:body>
 </html>
 

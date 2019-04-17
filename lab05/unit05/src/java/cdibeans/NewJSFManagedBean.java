@@ -5,41 +5,44 @@
  */
 package cdibeans;
 
+import java.io.Serializable;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author karta
  */
 @Named(value = "newJSFManagedBean")
-@RequestScoped
-public class NewJSFManagedBean {
-    private String itemID;
+@SessionScoped
+public class NewJSFManagedBean implements Serializable {
     /**
      * Creates a new instance of NewJSFManagedBean
      */
+    
     public NewJSFManagedBean() {
     }
+    
+    private String itemID;
     
     public String getItemID() {
         return itemID;
     }
 
-    public void setItemID() {
+    public void setItemID(String itemID) {
         this.itemID = itemID;
     }
     
-    public String toPage1() {
-        return "page1";
-    }
-    
-    public String toPage2() {
-        return "page2";
-    }
-    
-    public String toPage3() {
-        return "page3";
+    public String page(){
+        switch(itemID) { 
+           case "1": 
+                return "1";
+           case "2": 
+                return "2";
+           case "3": 
+                return "3";
+       }   
+      return "index";  
     }
     
 }
