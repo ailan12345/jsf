@@ -26,7 +26,7 @@
             <h:commandButton action="#{newJSFManagedBean.page}" value="Show Info" />
         </h:form>
         #{newJSFManagedBean.itemID}<br />
-        <h:graphicImage library="img" name="#{newJSFManagedBean.itemID}.jpg"/>
+        <h:graphicImage library="img" name="#{param['itemID']}.jpg"/>
     </h:body>
 </html>
 
