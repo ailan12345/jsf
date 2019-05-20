@@ -23,6 +23,22 @@ public class Press implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String press;
+
+    public String getPress() {
+        return press;
+    }
+
+    public void setPress(String press) {
+        this.press = press;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
     private Boolean isActive;
 
     public Long getId() {
