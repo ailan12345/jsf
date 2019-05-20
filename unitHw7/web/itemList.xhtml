@@ -16,7 +16,9 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Image URL</f:facet>
-                        #{item.image}
+                        <h:link outcome="updateItem" value="#{item.id}">
+                            <f:param name="updateItem" value="#{item.id}" />
+                        </h:link>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Description</f:facet>
