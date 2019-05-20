@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ItemFacade extends AbstractFacade<Item>{
 
-     @PersistenceContext(unitName = "AuctionAppDemoPU")
+     @PersistenceContext(unitName = "unit07PU")
     private EntityManager em;
     
     // default constructor

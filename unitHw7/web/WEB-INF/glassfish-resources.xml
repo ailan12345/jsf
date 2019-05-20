@@ -34,4 +34,6 @@
     <jdbc-resource enabled="true" jndi-name="java:app/crud" object-type="user" pool-name="derby_net_crud_crudPool"/>
     <jdbc-resource enabled="true" jndi-name="java:app/crud" object-type="user" pool-name="derby_net_crud_demo_appPool"/>
     <jdbc-resource enabled="true" jndi-name="java:app/jdbc/AuctionDBDemo" object-type="user" pool-name="derby_net_crud_crudPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/AuctionAppDemoPU" object-type="user" pool-name="derby_net_crudDB_crudPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/unit07DB" object-type="user" pool-name="derby_net_crudDB_crudPool"/>
 </resources>

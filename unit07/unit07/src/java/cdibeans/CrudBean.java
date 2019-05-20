@@ -26,6 +26,16 @@ public class CrudBean implements Serializable {
     
     private Item newItem;
     
+    private Item item;
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
     /**
      * Creates a new instance of CrudBean
      */
@@ -52,6 +62,27 @@ public class CrudBean implements Serializable {
     
     public String addItem(){
         itemFacade.create(newItem);
+        return "itemList";
+    }
+    
+    public String deleteItem(long itemId){
+        itemFacade.remove(itemFacade.find(itemId));
+        return "itemList";
+    }
+    
+//    public String goUpdateItem(long itemId){
+//        
+//        return "updateItem";
+//    }
+    
+    public String updateItem(long itemId){
+        this.item = itemFacade.find(itemId);
+        itemFacade.edit(item);
+        return "updateItem";
+    }
+    
+    public String doUpdateItem(){
+        itemFacade.edit(item);
         return "itemList";
     }
     
