@@ -5,4 +5,17 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
+   <persistence-unit name="DerbySampleTestPU" transaction-type="RESOURCE_LOCAL">
+    <!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <validation-mode>AUTO</validation-mode>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+    </properties>
+  </persistence-unit>
+
 </persistence>
