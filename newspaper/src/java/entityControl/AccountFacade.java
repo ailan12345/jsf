@@ -6,6 +6,7 @@
 package entityControl;
 
 import entities.Account;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author ailan
  */
 @Stateless
+@LocalBean
 public class AccountFacade extends AbstractFacade<Account> {
 
     @PersistenceContext(unitName = "newspaperPU")
