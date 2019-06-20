@@ -8,6 +8,7 @@ package cdiBeans;
 import entities.News;
 import entities.Press;
 import entityControl.NewsFacade;
+import entityControl.PressFacade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -24,6 +25,7 @@ public class crudNewsBean implements Serializable {
     
     @EJB
     private NewsFacade newsFacade;
+    private PressFacade pressFacade;
 
     public NewsFacade getNewsFacade() {
         return newsFacade;
@@ -43,16 +45,17 @@ public class crudNewsBean implements Serializable {
     
     private News newNews;
     
-    String newsID;
+    String pressID;
 
-    public String getNewsID() {
-        return newsID;
+    public String getPressID() {
+        return pressID;
     }
 
-    public void setNewsID(String newsID) {
-        this.newsID = newsID;
+    public void setPressID(String pressID) {
+        this.pressID = pressID;
     }
 
+ 
     /**
      * Creates a new instance of crudNewsBean
      */
@@ -69,12 +72,16 @@ public class crudNewsBean implements Serializable {
     }
     
     public String addNews(){
+//        System.out.println(pressID);
+//        newNews.press = pressFacade.find(Long.parseLong(pressID));
         newsFacade.create(newNews);
+//        newsFacade.edit(newNews);
         return "news";
     }
     
 //    public List<Press> pressListl(){
 //        return pressFacade.findAll();
 //    }
+    
     
 }

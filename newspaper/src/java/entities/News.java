@@ -41,7 +41,7 @@ public class News implements Serializable {
     private Date  date;
     @ManyToOne
     @JoinColumn(name = "SALES_ORDER_ID")
-    private Press press;
+    public Press press;
 
     public String getTitle() {
         return title;

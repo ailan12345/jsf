@@ -12,7 +12,7 @@
                 標題: <h:inputText value="#{crudNewsBean.newNews.title}"/>
                 內容: <h:inputTextarea value="#{crudNewsBean.newNews.content}" />
                 媒體: 
-                <h:selectOneMenu value="#{crudNewsBean.newsID}">
+                <h:selectOneMenu value="#{crudNewsBean.newNews.press}">
                     <f:selectItems value="#{crudPressBean.findAll()}" 
                                 var="press"
                                 itemLabel="#{press.press.concat('-').concat(press.isActive)}"
