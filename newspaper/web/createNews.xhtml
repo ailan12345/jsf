@@ -16,7 +16,7 @@
                     <f:selectItems value="#{crudPressBean.findAll()}" 
                                 var="aPress"
                                 itemLabel="#{aPress.press.concat('-').concat(press.isActive)}"
-                                itemValue="#{aPress.id}"
+                                itemValue="#{aPress}"
                                 />
                 </h:selectOneMenu>
                 圖1:<h:inputText value="#{crudNewsBean.newNews.image1}"/>

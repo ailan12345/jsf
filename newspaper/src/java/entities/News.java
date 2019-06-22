@@ -39,8 +39,6 @@ public class News implements Serializable {
     private String file;
     private String fileType;
     private Date  date;
-    @ManyToOne
-    @JoinColumn(name = "SALES_ORDER_ID")
     public Press press;
 
     public String getTitle() {
