@@ -45,16 +45,25 @@ public class crudNewsBean implements Serializable {
     
     private News newNews;
     
-    String pressID;
+    private Long pressID;
 
-    public String getPressID() {
+    public PressFacade getPressFacade() {
+        return pressFacade;
+    }
+
+    public Long getPressID() {
         return pressID;
     }
 
-    public void setPressID(String pressID) {
+    public void setPressID(Long pressID) {
         this.pressID = pressID;
     }
 
+    public void setPressFacade(PressFacade pressFacade) {
+        this.pressFacade = pressFacade;
+    }
+
+  
  
     /**
      * Creates a new instance of crudNewsBean
@@ -73,15 +82,11 @@ public class crudNewsBean implements Serializable {
     
     public String addNews(){
 //        System.out.println(pressID);
-//        newNews.press = pressFacade.find(Long.parseLong(pressID));
+//        Press aPress = pressFacade.find(pressID);
+//        newNews.setPress(aPress);
+//        newNews.setContent("AAAAA");
         newsFacade.create(newNews);
-//        newsFacade.edit(newNews);
         return "news";
     }
-    
-//    public List<Press> pressListl(){
-//        return pressFacade.findAll();
-//    }
-    
-    
+   
 }

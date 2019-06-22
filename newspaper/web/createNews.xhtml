@@ -14,9 +14,9 @@
                 媒體: 
                 <h:selectOneMenu value="#{crudNewsBean.newNews.press}">
                     <f:selectItems value="#{crudPressBean.findAll()}" 
-                                var="press"
-                                itemLabel="#{press.press.concat('-').concat(press.isActive)}"
-                                itemValue="#{press}"
+                                var="aPress"
+                                itemLabel="#{aPress.press.concat('-').concat(press.isActive)}"
+                                itemValue="#{aPress.id}"
                                 />
                 </h:selectOneMenu>
                 圖1:<h:inputText value="#{crudNewsBean.newNews.image1}"/>
