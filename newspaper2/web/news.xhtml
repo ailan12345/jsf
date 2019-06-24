@@ -7,7 +7,9 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
     <head>
         <title>News</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,7 +34,9 @@ and open the template in the editor.
             </h:column>
              <h:column>
                 <f:facet name="header">image1</f:facet>
-                #{item.image1}
+                <h:outputText value="#{item.image1}" >
+                    <f:converter converterId ="converters.urlConverter" />
+                </h:outputText>
                 <br />
                 #{item.imgText1}
             </h:column>
@@ -58,7 +62,7 @@ and open the template in the editor.
                 <f:facet name="header">發文時間</f:facet>
                 #{item.date}
                 <h:form>
-                    <h:commandButton value = "Delete"  action = "#{crudNewsBean.deleteNews(item.id, news)}" />                
+                    <h:commandButton value="Delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" />                
                 </h:form>
             </h:column>
         </h:dataTable>

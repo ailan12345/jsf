@@ -23,6 +23,7 @@
                                 />
                 </p:selectOneMenu>
                 圖1:<p:inputText value="#{crudNewsBean.newNews.image1}">
+                    <f:converter converterId="converters.urlConverter" />
                 </p:inputText>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText1}"/>
                 圖2:<p:inputText value="#{crudNewsBean.newNews.image2}"/>
