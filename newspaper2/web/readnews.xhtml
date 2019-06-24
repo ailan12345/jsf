@@ -35,11 +35,30 @@ and open the template in the editor.
             </h:column>
              <h:column>
                 <f:facet name="header">image1</f:facet>
-                <h:graphicImage value="#{item.image1}" />
+                <h:outputText value="#{item.image1}" >
+                    <f:converter converterId ="converters.urlConverter" />
+                </h:outputText>
                 <br />
                 #{item.imgText1}
             </h:column>
-             
+             <h:column>
+                <f:facet name="header">image2</f:facet>
+                #{item.image2}
+                <br />
+                #{item.imgText2}
+            </h:column>
+             <h:column>
+                <f:facet name="header">image3</f:facet>
+                #{item.image3}
+                <br />
+                #{item.imgText3}
+            </h:column> 
+            <h:column>
+                <f:facet name="header">image4</f:facet>
+                #{item.image4}
+                <br />
+                #{item.imgText4}
+            </h:column>
             <h:column>
                 <f:facet name="header">發文時間</f:facet>
                 #{item.date}

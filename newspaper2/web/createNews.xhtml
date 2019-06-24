@@ -13,7 +13,7 @@
         <h:form>
             <p:growl id="growl" life="2000" />
             <h:panelGrid columns="2">
-                標題: <p:inputText value="#{crudNewsBean.newNews.title}"/>
+                標題: <p:inputText value="#{crudNewsBean.newNews.title}"  required="true" requiredMessage ="標題不能為空" />
                 內容: <p:inputTextarea value="#{crudNewsBean.newNews.content}" />
                 媒體: 
                 <p:selectOneMenu value="#{crudNewsBean.pressID}">
@@ -23,7 +23,8 @@
                                 itemValue="#{aPress.id}"
                                 />
                 </p:selectOneMenu>
-                圖1:<p:inputText value="#{crudNewsBean.newNews.image1}">
+                圖1:<p:inputText value="#{crudNewsBean.newNews.image1}" required="true" requiredMessage="必要欄位">
+                    <f:validator validatorId="validators.UrlValidator" />
                     <f:converter converterId="converters.urlConverter" />
                 </p:inputText>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText1}"/>

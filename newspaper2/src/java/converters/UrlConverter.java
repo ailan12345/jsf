@@ -18,14 +18,19 @@ import javax.faces.convert.FacesConverter;
 public class UrlConverter implements Converter{
     @Override
     public Object getAsObject(FacesContext fc, UIComponent uic, String string) {
-         String url = string.replaceAll("[http://]+", "");
+        StringBuilder url = new StringBuilder();
+        if(!string.startsWith("http://", 0)) {
+            url.append("http://");
+        }
+        url.append(string);
+
         return url;
     }
 
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object o) {
         String inputVal = (String) o;
-        return "https://" + inputVal;
+        return inputVal;
     }
     
 }
