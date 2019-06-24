@@ -99,5 +99,27 @@ public class crudNewsBean implements Serializable {
         return "news";
     }
      
+    News news;
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
+    }
+     
+    public String updateNews(long itemId){
+        news = newsFacade.find(itemId);
+        newsFacade.edit(news);
+        return "updateNews";
+    }
+    
+    public String doUpdateItem(){
+        Press aPress = pressFacade.find(pressID);
+        news.setPress(aPress);
+        newsFacade.edit(news);
+        return "news";
+    }
    
 }

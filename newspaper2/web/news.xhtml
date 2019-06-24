@@ -62,7 +62,8 @@ and open the template in the editor.
                 <f:facet name="header">發文時間</f:facet>
                 #{item.date}
                 <h:form>
-                    <h:commandButton value="Delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" />                
+                    <h:commandButton value="Delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" /> 
+                    <h:commandButton value="Update" action ="#{crudNewsBean.updateNews(item.id)}" />
                 </h:form>
             </h:column>
         </h:dataTable>
