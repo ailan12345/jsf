@@ -13,6 +13,7 @@ and open the template in the editor.
     <head>
         <title>News</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://kit.fontawesome.com/9e2e45c1ab.js" integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH" crossorigin="anonymous"></script>
     </head>
     <body>
          <h:link outcome="/news">電子新聞</h:link>
@@ -62,7 +63,7 @@ and open the template in the editor.
                 <f:facet name="header">發文時間</f:facet>
                 #{item.date}
                 <h:form>
-                    <h:commandButton value="Delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" /> 
+                    <h:commandButton value="delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" styleClass="fas fa-trash" />
                     <h:commandButton value="Update" action ="#{crudNewsBean.updateNews(item.id)}" />
                 </h:form>
             </h:column>

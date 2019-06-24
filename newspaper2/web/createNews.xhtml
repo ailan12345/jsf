@@ -7,6 +7,7 @@
     
     <h:head>
         <title>Facelet Title</title>
+        <script src="https://kit.fontawesome.com/9e2e45c1ab.js" integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH" crossorigin="anonymous"></script>
     </h:head>
     <h:body>
         <h:form>
@@ -34,7 +35,7 @@
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText4}"/>
             </h:panelGrid>
             <p:commandButton value="Cancel" action="index"/>
-            <p:commandButton value="Submitt" action="#{crudNewsBean.addNews}" />
+            <p:commandButton value="Submitt" action="#{crudNewsBean.addNews}" icon="pi pi-save" />
             <h:commandButton value="Cancel" action="index" type="submit"/>
             <h:commandButton value="Submitt" action="#{crudNewsBean.addNews}" />
         </h:form>
