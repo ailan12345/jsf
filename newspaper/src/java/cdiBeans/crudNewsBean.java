@@ -25,6 +25,7 @@ public class crudNewsBean implements Serializable {
     
     @EJB
     private NewsFacade newsFacade;
+    @EJB
     private PressFacade pressFacade;
 
     public NewsFacade getNewsFacade() {
@@ -82,8 +83,8 @@ public class crudNewsBean implements Serializable {
     
     public String addNews(){
 //        System.out.println(pressID);
-//        Press aPress = pressFacade.find(pressID);
-//        newNews.setPress(aPress);
+        Press aPress = pressFacade.find(pressID);
+        newNews.setPress(aPress);
 //        newNews.setContent("AAAAA");
         newsFacade.create(newNews);
         return "news";
