@@ -22,7 +22,8 @@
                                 itemValue="#{aPress.id}"
                                 />
                 </p:selectOneMenu>
-                圖1:<p:inputText value="#{crudNewsBean.newNews.image1}"/>
+                圖1:<p:inputText value="#{crudNewsBean.newNews.image1}">
+                </p:inputText>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText1}"/>
                 圖2:<p:inputText value="#{crudNewsBean.newNews.image2}"/>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText2}"/>
@@ -31,7 +32,7 @@
                 圖4:<p:inputText value="#{crudNewsBean.newNews.image4}"/>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText4}"/>
             </h:panelGrid>
-            <p:commandButton value="Cancel" action="index" type="button"/>
+            <p:commandButton value="Cancel" action="index"/>
             <p:commandButton value="Submitt" action="#{crudNewsBean.addNews}" />
             <h:commandButton value="Cancel" action="index" type="submit"/>
             <h:commandButton value="Submitt" action="#{crudNewsBean.addNews}" />

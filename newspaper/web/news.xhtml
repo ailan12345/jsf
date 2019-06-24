@@ -47,14 +47,20 @@ and open the template in the editor.
                 #{item.image3}
                 <br />
                 #{item.imgText3}
-            </h:column> <h:column>
+            </h:column> 
+            <h:column>
                 <f:facet name="header">image4</f:facet>
                 #{item.image4}
                 <br />
                 #{item.imgText4}
             </h:column>
-            
-            
+            <h:column>
+                <f:facet name="header">發文時間</f:facet>
+                #{item.date}
+                <h:form>
+                    <h:commandButton value = "Delete"  action = "#{crudNewsBean.deleteNews(item.id, news)}" />                
+                </h:form>
+            </h:column>
         </h:dataTable>
         
     </body>

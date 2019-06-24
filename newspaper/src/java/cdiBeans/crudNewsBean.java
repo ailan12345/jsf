@@ -12,6 +12,8 @@ import entityControl.PressFacade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 
@@ -83,11 +85,19 @@ public class crudNewsBean implements Serializable {
     
     public String addNews(){
 //        System.out.println(pressID);
+        Date today = Calendar.getInstance().getTime();
+        System.out.println(today);
         Press aPress = pressFacade.find(pressID);
         newNews.setPress(aPress);
-//        newNews.setContent("AAAAA");
+        newNews.setDate(today);
         newsFacade.create(newNews);
         return "news";
     }
+    
+     public String deleteNews(long itemId, String newsType){
+        newsFacade.remove(newsFacade.find(itemId));
+        return "news";
+    }
+     
    
 }
