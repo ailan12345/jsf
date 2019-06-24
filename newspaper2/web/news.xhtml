@@ -46,6 +46,7 @@ and open the template in the editor.
                 <h:form>
                     <h:commandButton value="delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" styleClass="fas fa-trash" />
                     <h:commandButton value="Update" action ="#{crudNewsBean.updateNews(item.id)}" />
+                    <h:commandButton value="Read" action ="#{crudNewsBean.readNews(item.id)}" />
                 </h:form>
             </h:column>
         </h:dataTable>

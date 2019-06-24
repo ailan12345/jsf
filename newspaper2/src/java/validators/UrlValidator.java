@@ -25,9 +25,8 @@ public class UrlValidator implements Validator{
        StringBuilder url = new StringBuilder();
        String urlValue = o.toString();
 
-       if(!urlValue.startsWith("https://", 0)) {
+       if(!urlValue.startsWith("http", 0)) {
            ((UIInput) uic).setValid(false);
-            url.append("https://");
             String msg = "url 格式輸入錯誤";
             context.addMessage(uic.getClientId(), new FacesMessage(msg));
        }

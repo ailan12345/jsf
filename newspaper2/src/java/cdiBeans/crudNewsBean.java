@@ -121,5 +121,11 @@ public class crudNewsBean implements Serializable {
         newsFacade.edit(news);
         return "news";
     }
+    
+    public String readNews(long itemId){
+        news = newsFacade.find(itemId);
+       
+        return "readnews";
+    }
    
 }

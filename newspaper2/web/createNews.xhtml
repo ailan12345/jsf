@@ -28,7 +28,9 @@
                     <f:converter converterId="converters.urlConverter" />
                 </p:inputText>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText1}"/>
-                圖2:<p:inputText value="#{crudNewsBean.newNews.image2}"/>
+                圖2:<p:inputText value="#{crudNewsBean.newNews.image2}" required="true" requiredMessage="必要欄位">
+                    <f:validator validatorId="validators.UrlValidator" />
+                </p:inputText>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText2}"/>
                 圖3:<p:inputText value="#{crudNewsBean.newNews.image3}"/>
                 圖說:<p:inputText value="#{crudNewsBean.newNews.imgText3}"/>

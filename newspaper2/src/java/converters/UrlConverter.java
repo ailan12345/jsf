@@ -29,7 +29,7 @@ public class UrlConverter implements Converter{
 
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object o) {
-        String inputVal = (String) o;
+        String inputVal = o.toString();
         return inputVal;
     }
     

@@ -21,10 +21,7 @@ and open the template in the editor.
         <h:link outcome="/pdf">報刊影像</h:link>
         <h:link outcome="/press">媒體設定</h:link>
         
-        <h:form>
-            <h:commandButton value="新增報導" action="#{crudNewsBean.goNewPressPage}" />
-        </h:form>
-        <h:dataTable value="#{crudNewsBean.findAll()}" var="item">
+        <h:dataTable value="#{crudNewsBean.news}" var="item">
             <h:column>
                 <f:facet name="header">標題</f:facet>
                 #{item.title}<br />媒體#{item.press.press}
@@ -62,10 +59,6 @@ and open the template in the editor.
             <h:column>
                 <f:facet name="header">發文時間</f:facet>
                 #{item.date}
-                <h:form>
-                    <h:commandButton value="delete" action ="#{crudNewsBean.deleteNews(item.id, news)}" styleClass="fas fa-trash" />
-                    <h:commandButton value="Update" action ="#{crudNewsBean.updateNews(item.id)}" />
-                </h:form>
             </h:column>
         </h:dataTable>
         
