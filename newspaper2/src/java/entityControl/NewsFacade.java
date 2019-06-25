@@ -20,7 +20,7 @@ import javax.persistence.PersistenceContext;
 @LocalBean
 public class NewsFacade extends AbstractFacade<News>{
 
-    @PersistenceContext(unitName = "newspaperPU")
+    @PersistenceContext(unitName = "n3PU")
     private EntityManager em;
     
     // default constructor

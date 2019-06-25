@@ -5,11 +5,12 @@
  */
 package entityControl;
 
-import entities.Account;
+import entities.News;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 
 /**
  *
@@ -17,18 +18,20 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @LocalBean
-public class AccountFacade extends AbstractFacade<Account> {
+public class NewsFacade extends AbstractFacade<News>{
 
-    @PersistenceContext(unitName = "n3PU")
+    @PersistenceContext(unitName = "newspaper3PU")
     private EntityManager em;
     
     // default constructor
-    public AccountFacade() {
-        super(Account.class);
+    public NewsFacade() {
+        super(News.class);
     }
     
     
+    @Override
     protected EntityManager getEntityManager() {
         return em;
     }
+
 }

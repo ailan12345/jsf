@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <head>
+        <title>News</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://kit.fontawesome.com/9e2e45c1ab.js" integrity="sha384-7cupKsyf1krt0hPaFhz7o347RIzmECgbuiiOTe+NbIi9eA5z8RSNuYFdTDgRTZHH" crossorigin="anonymous"></script>
+    </head>
+    <body>
+         <h:link outcome="/news">電子新聞</h:link>
+        <h:link outcome="/media">影音新聞</h:link>
+        <h:link outcome="/pdf">報刊影像</h:link>
+        <h:link outcome="/press">媒體設定</h:link>
+        
+        <h:dataTable value="#{crudNewsBean.news}" var="item">
+            <h:column>
+                <f:facet name="header">標題</f:facet>
+                #{item.title}<br />媒體#{item.press.press}
+            </h:column>
+            <h:column>
+                <f:facet name="header">內容</f:facet>
+                #{item.content}
+            </h:column>
+             <h:column>
+                <f:facet name="header">image1</f:facet>
+                <h:outputText value="#{item.image1}" >
+                    <f:converter converterId ="converters.urlConverter" />
+                </h:outputText>
+                <br />
+                #{item.imgText1}
+            </h:column>
+             <h:column>
+                <f:facet name="header">image2</f:facet>
+                #{item.image2}
+                <br />
+                #{item.imgText2}
+            </h:column>
+             <h:column>
+                <f:facet name="header">image3</f:facet>
+                #{item.image3}
+                <br />
+                #{item.imgText3}
+            </h:column> 
+            <h:column>
+                <f:facet name="header">image4</f:facet>
+                #{item.image4}
+                <br />
+                #{item.imgText4}
+            </h:column>
+            <h:column>
+                <f:facet name="header">發文時間</f:facet>
+                #{item.date}
+            </h:column>
+        </h:dataTable>
+        
+    </body>
+</html>
